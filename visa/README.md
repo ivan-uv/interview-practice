@@ -49,6 +49,20 @@ Reading between the lines of the JD:
 |------|---------------|
 | [`python/questions.py`](python/questions.py) | Function stubs + docstrings — implement these |
 | [`python/solutions.py`](python/solutions.py) | Full implementations + runnable demo (`python solutions.py`) |
+| [`python/sample_dag.py`](python/sample_dag.py) | Working Airflow DAG — daily compliance monitoring pipeline with sensors, branching, XCom, and interview talking points |
+
+### Bash (`bash/`)
+
+| File | What it covers |
+|------|---------------|
+| [`bash/questions.sh`](bash/questions.sh) | 30 problems — file inspection, text processing, piping, loops, cron, process management |
+| [`bash/solutions.sh`](bash/solutions.sh) | Full solutions with interview context notes (`bash solutions.sh all`) |
+
+### Behavioral
+
+| File | What it covers |
+|------|---------------|
+| [`behavioral_prep.md`](behavioral_prep.md) | 10 STAR story templates mapped to Visa leadership principles + question-to-story index |
 
 ---
 
