@@ -9,7 +9,8 @@ A collection of interview preparation materials organized by company/role.
 ```
 interview_practice/
 ├── mercury/    # Senior Analytics Engineering role @ Mercury
-└── cresta/     # Data Scientist, Customer Analytics role @ Cresta
+├── cresta/     # Data Scientist, Customer Analytics role @ Cresta
+└── visa/       # Senior Analyst, Global Interchange Compliance @ Visa
 ```
 
 ---
@@ -29,6 +30,16 @@ Interview prep for the **Data Scientist, Customer Analytics** role at Cresta.
 Covers: SQL, Python/stats, A/B testing & causal inference, NLP for conversational data, business case studies, and behavioral questions.
 
 See [`cresta/README.md`](cresta/README.md) for full details.
+
+---
+
+## visa/
+
+Interview prep for the **Senior Analyst, Global Interchange Compliance** role at Visa.
+
+Covers: SQL, Python/automation, interchange mechanics, Durbin Amendment, anomaly detection, compliance monitoring, dashboarding, and business case studies.
+
+See [`visa/README.md`](visa/README.md) for full details.
 
 ---
 
