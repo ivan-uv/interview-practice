@@ -55,8 +55,14 @@ See `sql/questions.sql` for worked examples.
 ### Automation & Tooling
 - Describe your experience with command-line automation (Bash scripting).
 - How would you set up an Airflow DAG to refresh a compliance dashboard daily?
+- What is a DAG and why is "acyclic" important?
+- How does Airflow differ from cron?
+- What is idempotency and why does it matter for data pipelines?
+- How would you handle a task that frequently fails in Airflow?
 - Walk me through your version control workflow — how do you use Git for analytical work?
+- Why does code review matter in a compliance context? (audit trail, four-eyes principle)
 - How do you ensure reproducibility in your analyses?
+- What environments does code move through before production? (Dev → Test → Staging → Prod)
 
 See `python/questions.py` for worked examples.
 
@@ -65,6 +71,7 @@ See `python/questions.py` for worked examples.
 ## 4. Interchange & Payments Domain
 
 - Explain how interchange works in the four-party model. Who pays whom?
+- Walk through the transaction lifecycle: authorization → clearing → settlement. What happens at each step?
 - What is the Durbin Amendment? How does it affect debit interchange?
 - What determines which interchange rate a transaction receives?
 - What causes a transaction to be "downgraded" to a higher interchange rate?
@@ -74,6 +81,11 @@ See `python/questions.py` for worked examples.
 - Why does Visa care about interchange compliance if Visa doesn't collect interchange?
 - Explain the difference between regulated and exempt debit interchange.
 - What is Level II/III data and why does it matter for commercial card interchange?
+- **What is CEDP and why does it matter right now?** (This is the most relevant current change — know the L2 sunset timeline, Product 3, and compliance implications)
+- What is the DOJ antitrust lawsuit about? How does it affect the compliance team's work?
+- What is tokenization and how does it affect interchange qualification?
+- Break down the Merchant Discount Rate — what percentage goes to interchange vs. scheme fees vs. acquirer markup?
+- What are the structural changes in the Nov 2025 amended merchant settlement? (10 bps reduction, 1.25% cap for 8 years)
 
 ---
 

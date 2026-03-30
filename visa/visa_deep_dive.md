@@ -11,7 +11,9 @@ Know this cold. Every interviewer will expect you to understand how Visa makes m
 - **Employees**: ~26,500 globally
 - **HQ**: Foster City, CA (offices in San Francisco, Austin, Denver, Atlanta, Miami, London, Singapore, and 100+ countries)
 - **Market cap**: ~$600B+ (one of the most valuable companies in the world)
-- **FY2024 revenue**: ~$35.9B net revenue
+- **FY2025 revenue**: ~$40B net revenue (up 11% YoY)
+- **Q1 FY2026 revenue**: $10.9B (up 15%)
+- **Net profit margin**: ~50%+
 - **CEO**: Ryan McInerney (since Feb 2023; previously President of Visa)
 - **Chairman**: Alfred F. Kelly Jr. (former CEO)
 
@@ -33,15 +35,20 @@ Visa earns revenue from **three primary sources** — none of which are intercha
 Fees charged to financial institutions based on their payment volume on Visa's network.
 
 ### 2. Data Processing Revenues (~38% of net revenue)
-Per-transaction fees for authorization, clearing, settlement, and network access. This is the toll for using VisaNet.
+Per-transaction fees for authorization, clearing, settlement, and network access. This is the toll for using VisaNet. Largest segment.
 
 ### 3. International Transaction Revenues (~27% of net revenue)
-Cross-border transaction fees when the issuer and acquirer are in different countries.
+Cross-border transaction fees when the issuer and acquirer are in different countries. 13% constant-dollar growth in FY2025.
 
-### 4. Other Revenues (~5%)
-Consulting, analytics (Visa Consulting Analytics), licensing, and value-added services.
+### 4. Value-Added Services (~24% growth, $10.9B in FY2025)
+Fastest-growing segment. Includes fraud prevention (Visa Advanced Authorization), risk/identity solutions, issuer processing (Pismo), consulting, analytics (Visa Consulting Analytics), and acceptance solutions.
 
 **Note**: Client incentives (rebates to issuers and merchants) offset ~27% of gross revenue.
+
+### Visa's Three Growth Levers
+1. **Consumer Payments**: Core card business — credit, debit, prepaid across CP and CNP channels
+2. **Commercial & Money Movement**: B2B payments, Visa Direct (real-time push payments — 12.5B transactions in FY2025), cross-border remittances, disbursements
+3. **Value-Added Services (VAS)**: Fraud prevention, risk/identity, issuer processing, consulting, analytics
 
 ---
 
@@ -107,6 +114,43 @@ Visa publishes **hundreds** of interchange rate categories. Rates vary by:
 
 ---
 
+## Recent Strategic Moves (2024–2026)
+
+| Date | Move | Why It Matters |
+|------|------|---------------|
+| Jan 2024 | **Pismo Acquisition** ($929M) | Cloud-native issuer processing platform. Visa now competes with FIS/Fiserv/TSYS in core banking infrastructure. |
+| Dec 2024 | **Featurespace Acquisition** ($946M) | Real-time AI fraud prevention, strengthening Visa's risk/identity stack. |
+| 2025 | **AI & GenAI investments** | Early adopter of neural networks for fraud scoring. Now investing in generative AI for agentic commerce (AI agents making purchases autonomously). |
+| 2025 | **Stablecoins & Tokenization** | Piloting stablecoin settlement and expanding token-based commerce. Tokenized transactions can qualify for lower interchange. |
+| 2025-2026 | **CEDP** (Commercial Enhanced Data Program) | Major overhaul of commercial interchange incentives — **directly relevant to your role**. See below. |
+
+CEO Ryan McInerney's vision: Visa as a "payments hyperscaler" — modular services that clients plug into.
+
+---
+
+## CEDP — Commercial Enhanced Data Program
+
+**This is the single most relevant current change to interchange, and it's happening RIGHT NOW.**
+
+CEDP replaces the legacy Level 2/Level 3 interchange incentive structure for commercial cards. It fundamentally changes how commercial interchange is qualified.
+
+| Date | Change |
+|------|--------|
+| April 2025 | CEDP launched. 0.05% participation fee on eligible transactions. Replaces legacy L2/L3 structure. |
+| October 2025 | Only verified merchants eligible for reduced CEDP rates. New **Product 3** interchange rates introduced. Business cards now eligible for L3-level savings for first time. |
+| November 2025 | Visa paused new merchant verifications to adjust methodology. Existing verified merchants unaffected. |
+| January 2026 | Level 2 interchange rates for small business cards increased by 75 bps — making L2 more expensive than sending no enhanced data at all. |
+| April 2026 | Level 2 interchange programs sunset entirely (except fleet fuel). **CEDP Product 3 becomes the only path to reduced commercial rates.** |
+
+### Why This Matters for Your Role
+- Your team will monitor whether merchants and acquirers are correctly submitting CEDP data
+- Qualification rates for Product 3 need validation
+- The L2 → Product 3 transition must proceed without errors
+- Financial impacts of the transition need accurate calculation
+- Expect interview questions about CEDP — it's the most relevant current change
+
+---
+
 ## Regulatory Landscape
 
 ### The Durbin Amendment (2010, effective 2011)
@@ -125,11 +169,28 @@ The single most important regulation for your role:
 - Visa/bank lobbyists have pushed back vigorously
 - The final rule implementation timeline remains in flux — check for latest updates
 
-### Merchant Class Action Settlement (2024)
-- Visa and Mastercard reached a **$30 billion settlement** with merchants (March 2024) — largest antitrust settlement in US history
-- Included provisions to reduce interchange rates by at least 4 basis points for 3 years and cap rates for 5 years
-- **Federal judge rejected the settlement** in June 2024, calling relief "insufficient"
-- Case remains active — a major overhang on interchange strategy
+### Merchant Class Action Settlement (2005–Present)
+
+The longest-running interchange litigation: *In re Payment Card Interchange Fee and Merchant Discount Antitrust Litigation*.
+
+- **$5.54B Monetary Settlement** (2019): Approved, claims period closed Feb 2025. Payments to merchants for alleged interchange overcharges 2004–2019.
+- **Equitable Relief Settlement** (Nov 2025): Amended settlement with major structural changes:
+  - Merchants gain the right to **decline high-cost premium and commercial cards**
+  - Interchange rates reduced by **10 basis points** (up from 7 bps in the rejected 2024 proposal)
+  - Standard consumer credit rates **capped at 1.25%** (125 bps) for eight years
+  - $21 million merchant education program
+  - Final approval expected late 2026/early 2027
+- **Why it matters for your role**: Caps and structural changes require system updates, new monitoring logic, and compliance verification across Visa's global operations.
+
+### DOJ Antitrust Lawsuit (Sept 2024)
+
+Separate from the merchant litigation. The U.S. Department of Justice sued Visa for **monopolization of the debit card market** under Sections 1 and 2 of the Sherman Act.
+
+- Visa handles **60%+ of U.S. debit transactions**, collecting $7B+ annually in processing fees
+- DOJ alleges Visa uses exclusionary contracts with merchants and issuers to lock up debit volume and prevent competitors from gaining traction
+- **Visa's motion to dismiss was denied** in June 2025. Case ongoing under Judge John Koeltl in SDNY.
+- Trump administration continuing the Biden-era case — bipartisan concern about interchange costs
+- **Why it matters**: Increased regulatory scrutiny means compliance is more important than ever. Errors or anomalies could have amplified legal/reputational consequences.
 
 ### Credit Card Competition Act (CCCA)
 - Proposed legislation (Senators Durbin & Marshall) that would extend routing competition to **credit cards**
@@ -222,19 +283,25 @@ Based on the JD and industry context:
 
 | Metric | Number |
 |--------|--------|
-| FY2024 net revenue | ~$35.9B |
-| Transactions processed (FY2024) | ~212.6B |
-| Total payments volume (FY2024) | ~$14.8T |
+| FY2025 net revenue | ~$40B (up 11% YoY) |
+| Q1 FY2026 net revenue | $10.9B (up 15%) |
+| Transactions processed (FY2025) | ~258B (901M/day average) |
+| Total payments volume | ~$14+ trillion |
 | Cards in circulation | ~4.3B globally |
 | Countries/territories | 200+ |
 | Transactions per second (peak) | 65,000+ |
 | Employees | ~26,500 |
+| Net profit margin | ~50%+ |
+| Value-Added Services revenue | $10.9B (up 24% YoY) |
+| Visa Direct transactions (FY2025) | 12.5B |
+| Cross-border volume growth | 13% constant-dollar |
 | US regulated debit interchange cap | ~$0.21 + 0.05% + $0.01 |
-| US credit/debit volume split | ~60/40 by transaction count (debit higher volume, lower ticket) |
-| Debit vs credit average ticket | Debit ~$40, Credit ~$90 |
+| US credit/debit volume split | ~60/40 by txn count (debit higher volume, lower ticket) |
+| Rate update cycle | April and October |
+| Consumer credit interchange cap (settlement) | 1.25% for 8 years (pending approval) |
 
 ---
 
 ## "Why Visa?" Answer Framework
 
-> "Three things drew me to this role. First, the scale — Visa processes over 200 billion transactions a year, so even small improvements in compliance monitoring have outsized financial impact. That's the kind of data problem I want to work on. Second, the interchange space is uniquely interesting right now — with the Durbin cap potentially being lowered, the merchant settlement still unresolved, and the Credit Card Competition Act in discussion, the regulatory environment is evolving fast, and this team is right at the center of it. Third, I'm excited about building analytical infrastructure that scales — the JD mentions Airflow, version control, and dashboards, which tells me this team is moving toward automated, production-grade monitoring rather than ad-hoc analysis. That's exactly the kind of work I want to do."
+> "Three things drew me to this role. First, the scale — Visa processes over 250 billion transactions a year, so even small improvements in compliance monitoring have outsized financial impact. That's the kind of data problem I want to work on. Second, the interchange space is uniquely dynamic right now — the CEDP transition is fundamentally changing how commercial interchange is qualified, the DOJ antitrust suit is increasing scrutiny on debit routing, the merchant settlement is introducing rate caps, and the Durbin cap may be lowered. This team is right at the center of all of it. Third, I'm excited about building analytical infrastructure that scales — the JD mentions Airflow, version control, and dashboards, which tells me this team is moving toward automated, production-grade monitoring rather than ad-hoc analysis. That's exactly the kind of work I want to do."

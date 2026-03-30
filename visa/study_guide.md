@@ -240,9 +240,9 @@ done
 
 | Metric | Number |
 |--------|--------|
-| Visa FY2024 net revenue | ~$35.9B |
-| Transactions processed annually | ~212.6B |
-| Total payments volume | ~$14.8T |
+| Visa FY2025 net revenue | ~$40B (up 11%) |
+| Transactions processed (FY2025) | ~258B (901M/day) |
+| Total payments volume | ~$14+ trillion |
 | Cards in circulation | ~4.3B globally |
 | Transactions per second (peak) | 65,000+ |
 | US Durbin debit cap | ~$0.21 + 0.05% + $0.01 |
@@ -253,12 +253,102 @@ done
 
 ---
 
+## CEDP — Commercial Enhanced Data Program
+
+This is the most relevant current change. Know it cold.
+
+| Concept | What to Know |
+|---------|-------------|
+| **What CEDP replaces** | Legacy Level 2 / Level 3 interchange incentive structure for commercial cards |
+| **Product 3** | CEDP's replacement for L2/L3 rates. Only path to reduced commercial interchange after April 2026 |
+| **L2 sunset** | April 2026 — Level 2 programs end (except fleet fuel). L2 rates already increased 75 bps in Jan 2026 |
+| **Participation fee** | 0.05% on eligible CEDP transactions |
+| **Merchant verification** | Required for reduced rates. Visa paused new verifications Nov 2025 to adjust methodology |
+| **Compliance impact** | Monitor correct data submission, qualification rates, transition errors, financial impact calculation |
+
+---
+
+## Apache Airflow Quick Reference
+
+The JD mentions "familiarity with orchestration tools including Airflow."
+
+### Core Concepts
+| Concept | What It Is |
+|---------|-----------|
+| **DAG** | Directed Acyclic Graph — a pipeline definition. Tasks flow one direction, no loops. |
+| **Task** | Smallest unit of execution. Each task = one operation (SQL query, Python function, API call). |
+| **Operator** | Template for a task type: `BashOperator`, `PythonOperator`, `SqlOperator`, `EmailOperator` |
+| **Scheduler** | Determines what to run and when based on dependencies and schedule |
+| **Executor** | Determines how/where to run: `LocalExecutor`, `CeleryExecutor`, `KubernetesExecutor` |
+| **XCom** | Cross-communication for passing small metadata between tasks (IDs, counts, paths). NOT for large data. |
+| **Sensor** | Waits for a condition (file exists, partition ready, API responds) before proceeding |
+| **Connections** | Securely stored credentials and endpoints. Never hardcode secrets. |
+
+### How Airflow Would Be Used in This Role
+- Schedule daily compliance monitoring queries
+- Orchestrate multi-step ETL: extract → join rate tables → flag mismatches → load to dashboard → alert
+- Automate incident detection when error thresholds are exceeded
+- Manage dependencies: ensure data availability before running checks
+
+### Likely Interview Questions on Airflow
+- **Q: What is a DAG and why is "acyclic" important?**
+  A: Prevents infinite execution loops — every pipeline must have a definite start and end.
+- **Q: How does Airflow differ from cron?**
+  A: Cron just schedules. Airflow manages task dependencies, retries, monitoring UI, logging, alerting, and audit trails.
+- **Q: What is idempotency and why does it matter?**
+  A: A task is idempotent if running it multiple times produces the same result. Critical because Airflow may re-run failed tasks — no duplicate records or double-counted errors.
+
+---
+
+## Power BI / Tableau Quick Reference
+
+### Key Concepts
+| Concept | Power BI | Tableau |
+|---------|----------|---------|
+| **Formulas** | DAX (CALCULATE, SUMX, FILTER, ALL) | Calculated fields + LOD expressions |
+| **LOD equivalent** | CALCULATE with ALLEXCEPT | `{FIXED [Region] : AVG([Rate])}` |
+| **Data model** | Star schema, relationships, DirectQuery vs Import | Live connection vs Extract |
+| **Security** | Row-Level Security (RLS) | User filters |
+| **Deployment** | Desktop (author) → Service (share) | Desktop (author) → Server/Cloud (share) |
+
+### KPI Examples for This Role
+- Interchange compliance rate (% of transactions at correct rate)
+- Error volume (count and $ impact)
+- Mean time to resolution (MTTR) for incidents
+- Compliance trend by region/card type
+- CEDP qualification rate
+- Open cases by severity with aging
+
+---
+
+## Quick-Reference Glossary
+
+| Term | Definition |
+|------|-----------|
+| **Interchange Fee** | Fee paid by acquirer to issuer on each transaction. Set by Visa. Typically 70-80% of merchant cost. |
+| **MDR** | Merchant Discount Rate. Total fee deducted from merchant. = Interchange + scheme fees + acquirer markup. |
+| **Scheme/Assessment Fee** | Fee paid to Visa for network use. Small % of each transaction. |
+| **MCC** | Merchant Category Code. 4-digit code classifying merchant type. Affects interchange rate. |
+| **CP / CNP** | Card-Present vs. Card-Not-Present. CNP (e-commerce) typically has higher interchange due to fraud risk. |
+| **CEDP** | Commercial Enhanced Data Program. New framework for commercial card interchange incentives. |
+| **Product 3** | CEDP's replacement for Level 2/Level 3 incentive rates. |
+| **Level 2/3 Data** | Enhanced transaction data (tax amount, line-item detail) for lower commercial rates. Being sunset. |
+| **Visa Direct** | Real-time push payment platform. P2P, disbursements, cross-border remittances. |
+| **Tokenization** | Replacing card numbers with unique tokens. Tokenized txns can qualify for lower interchange. |
+| **DAG** | Directed Acyclic Graph. In Airflow, a data pipeline definition. |
+| **DAX** | Data Analysis Expressions. Formula language for Power BI. |
+| **LOD Expression** | Level of Detail expression in Tableau. Controls calculation granularity (FIXED, INCLUDE, EXCLUDE). |
+| **Idempotency** | Running an operation multiple times produces the same result. Critical for reliable pipelines. |
+
+---
+
 ## Visa-Specific Talking Points
 
 ### For "Why Visa?"
-1. Scale of impact — 212B+ transactions, so small compliance improvements prevent millions in misallocated interchange
-2. Regulatory complexity is increasing (Durbin changes, CCCA, merchant settlement) — this team is at the intersection of data and policy
-3. The role blends analytics with operational rigor — building automated monitoring, not just ad-hoc reports
+1. Scale of impact — 258B+ transactions/year, so small compliance improvements prevent millions in misallocated interchange
+2. Regulatory complexity is increasing (DOJ antitrust suit, Durbin changes, CCCA, merchant settlement) — this team is at the center of it
+3. CEDP transition is happening right now — the compliance team is critical to ensuring the L2 sunset and Product 3 rollout goes smoothly
+4. The role blends analytics with operational rigor — building automated monitoring, not just ad-hoc reports
 
 ### For "Tell me about your analytical approach"
 Always frame around the compliance value chain:
